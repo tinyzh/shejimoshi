@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>合唱团</title>
+</head>
+<body>
+
+<script>
+    var duck = {
+        duckSinging:function(){
+            console.log('嘎嘎嘎');
+        }
+    };
+    var chick = {
+        duckSinging:function(){
+            console.log('嘎嘎嘎');
+        }
+    };
+    var choir = [];
+    var joinChior = function(animal){
+//        typeof(animal.duckSinging);
+        if(animal && typeof(animal.duckSinging) === 'function'){
+            choir.push(animal);
+            console.log('欢迎加入合唱团');
+            console.log('当前合唱团成员数量:'+choir.length);
+        }
+    };
+
+//    joinChior(duck);
+//    joinChior(chick);
+
+    //instanceof 用户判断一个变量是否为某个对象的实例
+//    var makeSound = function(animal){
+//        if(animal instanceof Duck){
+//            console.log('嘎嘎嘎');
+//        }else if(animal instanceof Dog){
+//            console.log('汪汪汪');
+//        }
+//    };
+//    var Duck = function(){};
+//    var Dog = function(){};
+//
+//    makeSound(new Dog());
+
+    var makeSound = function(animal){
+        animal.sound();
+    };
+    var Dog = function(){};
+    Dog.prototype.sound = function(){
+        console.log('汪汪汪');
+    };
+    var Ox = function(){};
+    Ox.prototype.sound = function(){
+        console.log('嚒嚒嚒');
+    };
+
+    makeSound(new Dog());
+    makeSound(new Ox());
+
+
+</script>
+
+</body>
+</html>
