@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>原型继承</title>
+</head>
+<body>
+<div id="div1">div1</div>
+<script>
+    var b = {name:'zc'};
+    var A = function(){};
+
+    A.prototype = b;
+
+    var a = new A();
+
+    console.log(a.name);
+    console.log(a.__proto__ === A.prototype);
+
+
+
+
+    var getId = document.getElementById;
+    getId('div1');
+
+</script>
+</body>
+</html>
