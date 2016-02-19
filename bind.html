@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    Function.prototype.bind = function(context){
+        var self = this;
+        return function(){
+            return self.apply(context,arguments);
+        }
+    }
+    var obj1 = {name:'zc'};
+    var name = 'window';
+    var func = function(){
+        console.log(this.name);
+    }.bind(obj1);
+    func();
+
+
+    (function(){
+        Array.prototype.push.call(arguments,3);
+        console.log(arguments);
+    })(1,2);
+
+</script>
+</body>
+</html>
