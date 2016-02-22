@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="loginBtn">点我登陆</button>
+<script>
+    var createLoginLayer = (function(){
+        var div = null;
+        return function(){
+            if(!div){
+                div = document.createElement('div');
+                div.innerHTML = '我是登陆弹窗';
+                div.style.display = 'none';
+                document.body.appendChild(div);
+            }
+            return div;
+        }
+    })();
+
+    document.getElementById('loginBtn').onclick = function(){
+        var loginLayer = createLoginLayer();//当点击登陆时  才创建登陆框
+        loginLayer.style.display = 'block';
+    }
+
+</script>
+</body>
+</html>
