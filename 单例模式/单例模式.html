@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var Singleton = function(name){
+        this.name = name;
+    }
+
+    Singleton.prototype.getName = function(){
+        console.log(this.name);
+    }
+
+    Singleton.getInstance = (function(){
+        var instance = null; //使用了闭包   instance不会销毁
+        return function(name){
+            if(!instance){ //判断是否创建过
+                instance = new Singleton(name);
+            }
+            return instance;
+        }
+    })();
+
+    var a = Singleton.getInstance('z');
+    var b = Singleton.getInstance('c');
+
+    console.log(a.name);
+    console.log(b.name);
+
+</script>
+</body>
+</html>
