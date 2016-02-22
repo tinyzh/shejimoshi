@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var isType = function(type){
+        return function(obj){
+            return Object.prototype.toString.call(obj) === '[object '+ type + ']';
+        }
+    };
+
+    var isArray = isType('Array');
+    var isString = isType('String');
+    var isNumber = isType('Number');
+    /*
+    实际上isArray 变成了
+    isArray = function(obj){
+        return Object.prototype.toString.call(obj) === '[object Array]';
+    };*/
+
+    console.log(isArray('sdf'));
+    console.log(isString('sdf'));
+    console.log(isNumber('23'));
+
+
+
+</script>
+</body>
+</html>

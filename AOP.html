@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    Function.prototype.before = function(beforefn){
+        var _self = this;
+        return function(){
+            beforefn.apply(this,arguments);
+            return _self.apply(this,arguments);
+        }
+    }
+
+</script>
+</body>
+</html>

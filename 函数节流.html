@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var throttle = function(fn,interval){
+        var __seft = fn,
+            timer,
+            firstTime = true;//是否是第一次调用
+
+        return function(){
+            var args = arguments,
+                __me = this;
+
+            if(firstTime){//第一次调用   不需要延迟执行
+                __seft.apply(__me,args);
+                return firstTime = false;
+            }
+
+            if(timer){
+                return false;
+            }
+
+            timer = setTimeout(function(){
+                clearTimeout(timer);
+                timer = null;
+                __seft.apply(__me,args);
+            },interval || 500);
+
+        };
+    };
+
+
+    window.onresize = throttle(function(){
+        console.log(1);
+    },3000);
+
+</script>
+</body>
+</html>

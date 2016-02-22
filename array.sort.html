@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //从小到大   sort是在原数组的基础上进行修改
+    var arr = [2,3,54,21];
+    arr.sort(function(a,b){
+        return a-b;
+    });
+    console.log(arr);
+
+    //从大大小
+    arr.sort(function(a,b){
+        return b-a;
+    });
+    console.log(arr);
+
+</script>
+</body>
+</html>
