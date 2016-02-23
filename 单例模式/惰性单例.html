@@ -7,23 +7,26 @@
 <body>
 <button id="loginBtn">点我登陆</button>
 <script>
-    var createLoginLayer = (function(){
-        var div = null;
-        return function(){
-            if(!div){
-                div = document.createElement('div');
-                div.innerHTML = '我是登陆弹窗';
-                div.style.display = 'none';
-                document.body.appendChild(div);
-            }
-            return div;
-        }
-    })();
+
+</script>
+<script>
+   var createLogin = function(){
+       var div = null;
+       if(!div){
+           div = document.createElement('div');
+           div.innerHTML = '登陆框';
+           div.style.display = 'none';
+           document.body.appendChild(div);
+       }
+       return div;
+   };
 
     document.getElementById('loginBtn').onclick = function(){
-        var loginLayer = createLoginLayer();//当点击登陆时  才创建登陆框
-        loginLayer.style.display = 'block';
+        var login = createLogin();
+        login.style.display = 'block';
     }
+
+
 
 </script>
 </body>
