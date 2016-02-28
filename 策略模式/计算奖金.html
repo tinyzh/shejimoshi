@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+        var strategis = {
+            "A" : function(salary){
+                return salary*4;
+            },
+            "B" : function(salary){
+                return salary*3;
+            },
+            "C" : function(salary){
+                return salary*2;
+            }
+        }
+
+        var cal = function(leave,salary){
+            return strategis[leave](salary);
+        }
+
+        console.log(cal("B",2000));
+
+</script>
+
+</body>
+</html>
